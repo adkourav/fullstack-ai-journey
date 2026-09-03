@@ -15,3 +15,21 @@
     
     It runs a Java bytecode and makes java plateform - Independent . 
 
+
+## Easy way to remember
+
+JDK → JRE → JVM
+
+## In short:
+
+JDK = Develop + Run
+
+JRE = Run
+
+JVM = Execute Java bytecode
+
+ Interview tip: If the interviewer asks for the main difference, simply remember: JDK is for development, JRE is for running, and JVM actually executes the Java bytecode.
+
+
+
+ ## 

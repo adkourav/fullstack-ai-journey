@@ -86,3 +86,20 @@ Data Types
 
 
 Java has two main types of data types: Primitive and Non-Primitive (Reference) data types. There are 8 primitive data types in Java.
+
+
+## Size of Data Types in Java
+
+Java has 8 primitive data types. Their sizes are:-
+
+
+| Data Type |                                Size | Example             |
+| --------- | ----------------------------------: | ------------------- |
+| `byte`    |                 **1 byte (8 bits)** | `byte a = 10;`      |
+| `short`   |               **2 bytes (16 bits)** | `short a = 1000;`   |
+| `int`     |               **4 bytes (32 bits)** | `int a = 10000;`    |
+| `long`    |               **8 bytes (64 bits)** | `long a = 100000L;` |
+| `float`   |               **4 bytes (32 bits)** | `float a = 10.5f;`  |
+| `double`  |               **8 bytes (64 bits)** | `double a = 10.5;`  |
+| `char`    |               **2 bytes (16 bits)** | `char a = 'A';`     |
+| `boolean` | **Not fixed by Java specification** | `boolean a = true;` |
