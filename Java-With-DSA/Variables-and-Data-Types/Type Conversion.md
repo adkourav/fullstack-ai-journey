@@ -63,7 +63,69 @@ double -> float -> long -> int -> short -> byte
 
 ---
 
-## 3) Java Type Conversion Rules
+## 3) Type Casting
+
+Type casting is the process of changing a value from one data type to another by using a cast.
+
+### Syntax
+```java
+targetType variableName = (targetType) value;
+```
+
+Java has two types of type casting:
+
+### A) Implicit Type Casting
+
+Implicit casting is performed automatically by Java when a smaller type is converted into a larger compatible type.
+
+```java
+int number = 25;
+double result = number;  // int is automatically cast to double
+
+System.out.println(result);  // 25.0
+```
+
+### B) Explicit Type Casting
+
+Explicit casting is performed manually by writing the target type in parentheses before the value.
+
+```java
+double price = 99.99;
+int roundedPrice = (int) price;
+
+System.out.println(roundedPrice);  // 99
+```
+
+The decimal part is removed; Java does not round the value up.
+
+### Type Casting Diagram
+```text
+Type Casting
+    |
+    +-- Implicit casting  : automatic, smaller -> larger
+    |
+    +-- Explicit casting  : manual, larger -> smaller
+```
+
+### Important points
+- Use parentheses to perform explicit casting: `(int) value`.
+- Explicit casting may lose decimal precision or cause overflow.
+- Casting changes the value's type for the expression; it does not change the original variable's type.
+
+### Example with Arithmetic
+```java
+int total = 5;
+int count = 2;
+
+double average = (double) total / count;
+System.out.println(average);  // 2.5
+```
+
+Without `(double)`, integer division would produce `2` instead of `2.5`.
+
+---
+
+## 4) Java Type Conversion Rules
 
 ### Automatic conversion happens when:
 - Both types are compatible
@@ -75,7 +137,7 @@ double -> float -> long -> int -> short -> byte
 
 ---
 
-## 4) Lossy Conversion
+## 5) Lossy Conversion
 
 Lossy conversion means some value or precision is lost during conversion.
 
@@ -112,7 +174,7 @@ Why?
 
 ---
 
-## 5) Key Points to Remember
+## 6) Key Points to Remember
 
 - `byte -> short -> int -> long -> float -> double` is widening
 - `double -> float -> long -> int -> short -> byte` is narrowing
@@ -122,7 +184,7 @@ Why?
 
 ---
 
-## 6) Simple Java Example
+## 7) Simple Java Example
 
 ```java
 public class TypeConversionDemo {
@@ -147,7 +209,7 @@ y = 45
 
 ---
 
-## 7) Final Summary
+## 8) Final Summary
 
 Type conversion in Java is important because:
 - it helps in storing values correctly
