@@ -11,6 +11,12 @@ public class Logical {
         System.out.println((3<2) || (5>0));
 
         // ! Logical NOT :- {()}
+
+        System.out.println(!(1<2));
+        //output :- False 
+        // if your condetion is true then its gives the output is false or your condetion is false then it gives the output true 
+
+        // so basecally it is give the output opposite to your condetion 
     }
     
 }
