@@ -55,4 +55,23 @@ SEO stand for search engine optimization
 Semantic HTML = HTML tags with clear meaning → Better SEO + Better Accessibility.
 
 
-## QUE 2 :- ## Difference between block, inline and inline-block elements? 
+## What is <iframe> in HTML? ##
+
+# Ans:- #
+<iframe> stands for Inline Frame.
+
+It is used to display another webpage, video, map, document, or other external content inside your current HTML webpage.
+
+
+## Simple definition
+
+<iframe> is an HTML element used to embed external content inside a webpage.
+
+Basic Syntax
+<iframe src="URL"></iframe>
+
+Here:
+
+iframe → creates a frame
+src → specifies what content should be displayed
+

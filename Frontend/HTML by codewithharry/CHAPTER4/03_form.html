@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form in html </title>
+    <style>
+        /* =========================
+   Basic Reset
+========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+   Body
+========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f5;
+            color: #333;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 40px 20px;
+        }
+
+
+        /* =========================
+   Heading
+========================= */
+
+        h1 {
+            color: #e23744;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+
+        /* =========================
+   Form
+========================= */
+
+        form {
+            width: 100%;
+            max-width: 550px;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* =========================
+   Form Divisions
+========================= */
+
+        form>div {
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+   Labels
+========================= */
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #444;
+        }
+
+
+        /* =========================
+   Input, Select & Textarea
+========================= */
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+
+            padding: 11px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        /* Input Focus */
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #e23744;
+
+            box-shadow: 0 0 5px rgba(226, 55, 68, 0.3);
+        }
+
+
+        /* =========================
+   Radio Buttons
+========================= */
+
+        input[type="radio"] {
+            width: auto;
+
+            margin-right: 5px;
+
+            accent-color: #e23744;
+        }
+
+
+        /* Radio labels */
+
+        input[type="radio"]+label {
+            display: inline;
+
+            margin-right: 15px;
+
+            font-weight: normal;
+        }
+
+
+        /* =========================
+   Checkbox
+========================= */
+
+        input[type="checkbox"] {
+            width: auto;
+
+            margin-right: 8px;
+
+            accent-color: #e23744;
+        }
+
+        input[type="checkbox"]+label {
+            display: inline;
+
+            font-weight: normal;
+        }
+
+
+        /* =========================
+   Subscription Heading
+========================= */
+
+        form p {
+            font-weight: bold;
+
+            margin-bottom: 10px;
+
+            color: #444;
+        }
+
+
+        /* =========================
+   Textarea
+========================= */
+
+        textarea {
+            resize: vertical;
+
+            min-height: 100px;
+        }
+
+
+        /* =========================
+   Submit Button
+========================= */
+
+        button {
+            width: 100%;
+
+            padding: 12px;
+
+            background-color: #e23744;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        /* Button Hover */
+
+        button:hover {
+            background-color: #c82333;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* Button Click */
+
+        button:active {
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+   Mobile Responsive
+========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 20px 10px;
+            }
+
+            form {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Forms in HTML</h1>
+    <Form action="/submmit.php">
+        <!-- name input  -->
+        <div>
+            <lable for="name">Name</lable>
+            <input id="name" type="text" placeholder="Enter name">
+        </div>
+        <!-- phone input -->
+        <div>
+            <lable for="phone">phone</lable>
+            <input id="phone" type="tel" placeholder="Enter phone no.">
+        </div>
+        <!-- Email input -->
+        <div>
+            <lable for="Email">Email</lable>
+            <input id="Email" type="Email" placeholder="Enter Email">
+        </div>
+        <!-- Enter password  -->
+        <div>
+            <lable for="password">password</lable>
+            <input id="password" type="password" placeholder="Enter password">
+        </div>
+        <!-- Date input -->
+        <div>
+            <lable for="dob">Date of birth</lable>
+            <input id="dob" type="date" required>
+        </div>
+        <!-- gender input  -->
+        <div>
+            <lable for="gender">select gender</lable>
+            <select id="gender" required>
+                <option value=" " disable selsected>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">other</option>
+            </select>
+        </div>
+        <!-- Radio button for subcription plan -->
+        <div>
+            <p>Subcription plan</p>
+            <input id="basic" type="radio" name="Subcription" value="basic">
+            <lable for="basic">basic</lable>
+            <input id="premium" type="radio" name="Subcription" value="premium">
+            <lable for="premium">premium</lable>
+            <input id="vip" type="radio" name="Subcription" value="vip">
+            <lable for="vip">vip</lable>
+        </div>
+        <!-- checkbox for term& condetion -->
+        <div>
+            <input id="term" type="checkbox" required>
+            <lable for="term">i am agree to term and condetion</lable>
+        </div>
+        <!-- text area fro a comment  -->
+        <div>
+            <lable for="comment">Comment</lable>
+            <textarea id="commnet" placeholder="Enter your comment" rows="4"></textarea>
+        </div>
+
+        <!-- button for submit  -->
+        <div>
+            <button type="submit">submit</button>
+        </div>
+    </Form>
+
+</body>
+
+</html>
