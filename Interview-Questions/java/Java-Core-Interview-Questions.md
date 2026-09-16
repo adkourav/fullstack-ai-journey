@@ -519,6 +519,348 @@ flowchart TD
 
 ---
 
+## 9. How are arrays stored in memory? Array vs ArrayList
+
+### Simple answer
+
+An array is stored in the **heap memory** as one continuous block of memory. The array variable itself is stored in the **stack**, and it points to that memory block.
+
+```java
+int[] numbers = {10, 20, 30};
+```
+
+Conceptually:
+
+```mermaid
+flowchart LR
+    A[Stack: numbers reference] --> B[Heap: array block]
+    B --> C[10]
+    B --> D[20]
+    B --> E[30]
+```
+
+### Important points
+
+- Arrays have a **fixed size** once created.
+- In a primitive array, actual values are stored directly.
+- In an object array, references to objects are stored.
+- All elements are stored in adjacent memory locations, so access is fast.
+
+### Array vs ArrayList
+
+| Feature | Array | ArrayList |
+|---|---|---|
+| Size | Fixed | Dynamic (can grow/shrink) |
+| Performance | Fast indexing | Slightly slower due to resizing logic |
+| Data type | Can store primitives and objects | Stores only objects (wrapper types for primitives) |
+| Methods | No built-in resize methods | Has methods like `add()`, `remove()`, `get()` |
+
+```java
+int[] arr = new int[3];      // fixed size
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);
+list.add(20);
+```
+
+### Interview answer
+
+An array is a fixed-size memory block. `ArrayList` is internally built using an array, but it handles resizing automatically and is more flexible for dynamic data.
+
+---
+
+## 10. Why is array size fixed in Java? What happens on index out of bounds?
+
+### Why fixed size?
+
+Java allocates memory for an array when it is created. The JVM needs to know how much memory to reserve. If the size changes later, Java would have to create a new larger array and copy old values into it.
+
+```java
+int[] marks = new int[5];
+```
+
+This means the array can store exactly 5 integers, nothing more and nothing less.
+
+### What happens on out-of-bounds index?
+
+If you access an array element using an invalid index, Java throws:
+
+```java
+ArrayIndexOutOfBoundsException
+```
+
+Example:
+
+```java
+int[] marks = {80, 90, 70};
+System.out.println(marks[3]); // invalid index 3
+```
+
+This happens because valid indexes are:
+
+```text
+0 to length - 1
+```
+
+For a 3-element array, valid indexes are `0`, `1`, and `2`.
+
+### Example
+
+```java
+int[] arr = {10, 20, 30};
+System.out.println(arr[0]); // 10
+System.out.println(arr[2]); // 30
+System.out.println(arr[3]); // throws ArrayIndexOutOfBoundsException
+```
+
+### Interview answer
+
+Array size is fixed because memory is allocated once. Accessing an invalid position causes an `ArrayIndexOutOfBoundsException` at runtime.
+
+---
+
+## 11. Explain `String s = "abc"` vs `String s = new String("abc")` — how many objects are created?
+
+### Case 1: `String s = "abc";`
+
+This creates a String literal. Java usually stores it in the **String constant pool**.
+
+- 1 String object in the pool
+- 1 reference variable `s`
+
+```java
+String s = "abc";
+```
+
+### Case 2: `String s = new String("abc");`
+
+This creates a new String object in the **heap** explicitly.
+
+- 1 object in the String pool for the literal `"abc"` (if not already present)
+- 1 new object in the heap because of `new String(...)`
+- 1 reference variable `s`
+
+So in simple terms, this usually creates **2 objects**.
+
+```mermaid
+flowchart LR
+    A[Variable s] --> B[Heap: new String("abc")]
+    C[Literal "abc"] --> D[String Pool]
+```
+
+### Example
+
+```java
+String a = "abc";
+String b = new String("abc");
+
+System.out.println(a == b); // false
+System.out.println(a.equals(b)); // true
+```
+
+### Interview answer
+
+- `"abc"` is a literal and commonly uses the String pool.
+- `new String("abc")` forces a new heap object.
+- The literal may also exist in the pool, so the total object count is usually 2 in that case.
+
+---
+
+## 12. What does `intern()` do? How does the String constant pool work?
+
+### What is the String pool?
+
+The **String constant pool** is a special memory area inside the JVM used to store String literals. Java tries to reuse the same String object instead of creating multiple copies.
+
+```java
+String a = "Java";
+String b = "Java";
+System.out.println(a == b); // true
+```
+
+Because both references point to the same pooled String object.
+
+### What does `intern()` do?
+
+`intern()` returns the canonical representation of the String from the pool.
+
+```java
+String s1 = new String("Java");
+String s2 = s1.intern();
+String s3 = "Java";
+
+System.out.println(s1 == s3); // false
+System.out.println(s2 == s3); // true
+```
+
+### Why is it useful?
+
+It helps reduce duplicate String objects when many dynamic strings have the same content.
+
+```mermaid
+flowchart LR
+    A[new String("Java")] --> B[Heap]
+    C["Java" literal] --> D[String Pool]
+    E[intern()] --> D
+```
+
+### Important note
+
+Using `intern()` on a large number of strings can increase memory use in some cases, so it should be used carefully.
+
+### Interview answer
+
+The String pool stores shared String literals. `intern()` tells the JVM: “Return the shared version of this String from the pool if it exists.”
+
+---
+
+## 13. Is Java pass-by-value or pass-by-reference? Prove it with an example (primitive + object)
+
+### Simple answer
+
+Java is **pass-by-value**.
+
+This means Java passes a **copy of the value** of the argument to the method. For primitives, the value is copied. For objects, the **reference value** is copied, not the actual object.
+
+### Example 1: Primitive type
+
+```java
+public class Demo {
+    static void changeNumber(int x) {
+        x = 50;
+        System.out.println("Inside method: " + x);
+    }
+
+    public static void main(String[] args) {
+        int num = 10;
+        changeNumber(num);
+        System.out.println("Outside method: " + num); // 10
+    }
+}
+```
+
+### What happened?
+
+- `num` was 10.
+- A copy of 10 was passed to the method.
+- The method changed the copy to 50.
+- The original `num` stayed 10.
+
+This proves Java passes primitive values by value.
+
+### Example 2: Object reference
+
+```java
+class Person {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+}
+
+public class Demo {
+    static void changeName(Person p) {
+        p.name = "Riya";
+    }
+
+    static void reassign(Person p) {
+        p = new Person("Neha");
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person("Amit");
+        changeName(person);
+        System.out.println(person.name); // Riya
+
+        reassign(person);
+        System.out.println(person.name); // still Riya
+    }
+}
+```
+
+### Explanation
+
+- In `changeName(person)`, the method receives a copy of the reference value.
+- Both the original and copied reference point to the same object.
+- So changing `p.name` changes the original object.
+- In `reassign(person)`, the method creates a new object and assigns it to the local copy of the reference.
+- The original `person` variable still points to the old object.
+
+### Interview answer
+
+Java is pass-by-value. For objects, the object reference is copied, not the object itself.
+
+---
+
+## 14. What is the difference between `length` (array), `length()` (String) and `size()` (Collection)?
+
+### Simple meaning
+
+| Type | Syntax | Meaning |
+|---|---|---|
+| Array | `array.length` | Number of elements in the array |
+| String | `string.length()` | Number of characters in the String |
+| Collection | `list.size()` | Number of elements in the collection |
+
+### Example
+
+```java
+int[] numbers = {10, 20, 30};
+System.out.println(numbers.length); // 3
+
+String text = "Hello";
+System.out.println(text.length()); // 5
+
+ArrayList<Integer> list = new ArrayList<>();
+list.add(1);
+list.add(2);
+list.add(3);
+System.out.println(list.size()); // 3
+```
+
+### Key differences
+
+- `length` is a **field** of arrays.
+- `length()` is a **method** of `String`.
+- `size()` is a **method** of collections like `ArrayList`, `Set`, `Map`, etc.
+
+### Important note
+
+```java
+String s = "abc";
+System.out.println(s.length()); // 3
+```
+
+But this is different from:
+
+```java
+char[] ch = {'a', 'b', 'c'};
+System.out.println(ch.length); // 3
+```
+
+### Interview answer
+
+- Array uses `length` because arrays are fixed-size data structures.
+- String uses `length()` because it is a method on the String object.
+- Collection uses `size()` because collections are dynamic and their size is calculated by a method.
+
+---
+
+## Quick summary for revision
+
+- Arrays are stored in heap memory as a continuous block.
+- Array size is fixed because memory is allocated once.
+- Invalid index leads to `ArrayIndexOutOfBoundsException`.
+- `String s = "abc"` often uses the String pool.
+- `new String("abc")` creates another object in heap.
+- `intern()` returns the shared object from the String pool.
+- Java is pass-by-value, even for object references.
+- `length` for arrays, `length()` for String, and `size()` for collections.
+
+If you revise these points clearly, your interview answers will sound confident and simple.
+
+---
+
 ## One-minute revision sheet
 
 1. **JDK** develops, **JRE** runs, and **JVM** executes bytecode.
