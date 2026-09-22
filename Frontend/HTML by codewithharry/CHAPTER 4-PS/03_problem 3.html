@@ -1,0 +1,257 @@
+<!-- 3:- Create an HTML form for a travel website to book a vacation. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travling webside </title>
+    <style>
+        /* =========================
+   Basic Reset
+========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+   Body
+========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dff6ff, #ffffff);
+
+            min-height: 100vh;
+
+            padding: 40px 20px;
+
+            color: #333;
+        }
+
+
+        /* =========================
+   Main Heading
+========================= */
+
+        h1 {
+            text-align: center;
+
+            color: #0077b6;
+
+            margin-bottom: 30px;
+
+            font-size: 36px;
+        }
+
+
+        /* =========================
+   Form
+========================= */
+
+        form {
+            width: 100%;
+            max-width: 600px;
+
+            margin: auto;
+
+            background-color: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =========================
+   Form Groups
+========================= */
+
+        form>div {
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+   Labels
+========================= */
+
+        label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-weight: bold;
+
+            color: #333;
+        }
+
+
+        /* =========================
+   Input & Select
+========================= */
+
+        input,
+        select {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+
+        /* =========================
+   Input Focus
+========================= */
+
+        input:focus,
+        select:focus {
+            border-color: #0077b6;
+
+            box-shadow: 0 0 6px rgba(0, 119, 182, 0.25);
+        }
+
+
+        /* =========================
+   Start & End Section
+========================= */
+
+        p {
+            font-weight: bold;
+
+            color: #0077b6;
+
+            margin: 10px 0;
+        }
+
+
+        /* =========================
+   Submit Button
+========================= */
+
+        button {
+            width: 100%;
+
+            padding: 13px;
+
+            background-color: #0077b6;
+
+            color: white;
+
+            border: none;
+
+            border-radius: 7px;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        /* Button Hover */
+
+        button:hover {
+            background-color: #005f8f;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* Button Click */
+
+        button:active {
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+   Mobile Responsive
+========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 25px 12px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            form {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Travling booking </h1>
+    <form action="">
+        <div>
+            <lable for="name">Name</lable>
+            <input id="name" type="text" placeholder="Enter your name">
+        </div>
+        <div>
+            <lable for="age">age</lable>
+            <input id="age" type="number" placeholder="Enter your age">
+        </div>
+        <div>
+            <lable for="date">date to travel</lable>
+            <input id="date" type="date">
+        </div>
+
+        <lable for="start">start</lable>
+        <input id="start" type="text" placeholder="from">
+
+        <p>To</p>
+
+        <lable for="end">end</lable>
+        <input id="end" type="text" placeholder="end">
+
+        <div>
+            <lable for="phoneno">Phone</lable>
+            <input id="phoneno" type="tel" placeholder="Enter you phone number">
+        </div>
+        <div>
+            <lable for="email">Email</lable>
+            <input id="email" type="Email" placeholder="Enter your email">
+
+        </div>
+        <div>
+            <lable for="gender">Select Gender</lable>
+            <select id="gender" required>
+                <option value=" " decible selected>Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="other">other</option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">submit</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

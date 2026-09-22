@@ -1,0 +1,440 @@
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    min-height: 100vh;
+    background-color: #e23744;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+
+    transition: 0.4s ease;
+}
+
+
+/* Header when scrolling */
+
+header.scrolled {
+    position: fixed;
+
+    background-color: rgba(180, 25, 38, 0.95);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo img {
+    width: 130px;
+
+    display: block;
+
+    transition: 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+header ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+
+header ul li a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+/* Navigation underline */
+
+header ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: white;
+
+    transition: 0.3s ease;
+}
+
+
+header ul li a:hover::after {
+    width: 100%;
+}
+
+
+header ul li a:hover {
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   MAIN HERO SECTION
+========================================= */
+
+main {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(210, 35, 50, 0.78),
+            rgba(180, 20, 35, 0.88)
+        ),
+        url("img/bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+/* =========================================
+   HERO LOGO
+========================================= */
+
+main > img {
+    width: 230px;
+
+    margin-bottom: 25px;
+
+    animation: logoAnimation 1s ease forwards;
+}
+
+
+/* Logo animation */
+
+@keyframes logoAnimation {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-40px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+main h1 {
+    max-width: 800px;
+
+    font-size: 58px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 1s ease 0.3s both;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+main p {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    margin-bottom: 30px;
+
+    animation: fadeUp 1s ease 0.5s both;
+}
+
+
+/* =========================================
+   SEARCH BOX
+========================================= */
+
+main input {
+    width: 100%;
+
+    max-width: 600px;
+
+    height: 58px;
+
+    padding: 0 25px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    color: #333;
+
+    background-color: white;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    animation: searchAnimation 1s ease 0.7s both;
+
+    transition: 0.3s ease;
+}
+
+
+main input::placeholder {
+    color: #888;
+}
+
+
+main input:focus {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 4px rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes searchAnimation {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    width: 100%;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background-color: #9d1725;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+
+        padding: 20px 5%;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    header ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    header ul li a {
+        font-size: 14px;
+    }
+
+
+    main {
+        padding-top: 180px;
+    }
+
+
+    main > img {
+        width: 180px;
+    }
+
+
+    main h1 {
+        font-size: 40px;
+    }
+
+
+    main p {
+        font-size: 16px;
+    }
+
+
+    main input {
+        height: 52px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    header ul {
+        gap: 12px;
+    }
+
+
+    header ul li a {
+        font-size: 13px;
+    }
+
+
+    main {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    main h1 {
+        font-size: 32px;
+    }
+
+
+    main p {
+        font-size: 15px;
+    }
+
+
+    main > img {
+        width: 150px;
+    }
+}
+

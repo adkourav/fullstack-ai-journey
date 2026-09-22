@@ -1,0 +1,214 @@
+<!-- 4. Create a table displaying score of cricket Players in a match using HTML. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>match score</title>
+    <style>
+        /* =========================
+   Basic Reset
+========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+   Body
+========================= */
+
+        body {
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(135deg, #e8f5e9, #ffffff);
+
+            min-height: 100vh;
+
+            padding: 60px 20px;
+        }
+
+
+        /* =========================
+   Table
+========================= */
+
+        table {
+            width: 80%;
+            max-width: 800px;
+
+            margin: auto;
+
+            border-collapse: collapse;
+
+            background-color: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+
+        /* =========================
+   Table Header
+========================= */
+
+        thead {
+            background-color: #087f23;
+
+            color: white;
+        }
+
+        thead th {
+            font-weight: bold;
+
+            font-size: 17px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+   Table Cells
+========================= */
+
+        td {
+            padding: 16px;
+
+            text-align: center;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        /* =========================
+   Table Body
+========================= */
+
+        tbody tr:nth-child(even) {
+            background-color: #f1f8f2;
+        }
+
+
+        /* =========================
+   Hover Effect
+========================= */
+
+        tbody tr {
+            transition: 0.3s;
+        }
+
+        tbody tr:hover {
+            background-color: #d9f2dc;
+
+            transform: scale(1.01);
+        }
+
+
+        /* =========================
+   Player Name
+========================= */
+
+        tbody td:first-child {
+            font-weight: bold;
+
+            color: #222;
+        }
+
+
+        /* =========================
+   Score
+========================= */
+
+        tbody td:nth-child(2) {
+            font-size: 20px;
+
+            font-weight: bold;
+
+            color: #087f23;
+        }
+
+
+        /* =========================
+   Match Name
+========================= */
+
+        tbody td:nth-child(3) {
+            color: #666;
+        }
+
+
+        /* =========================
+   Mobile Responsive
+========================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 30px 10px;
+            }
+
+            table {
+                width: 100%;
+            }
+
+            td {
+                padding: 12px 8px;
+
+                font-size: 14px;
+            }
+
+            thead td {
+                font-size: 13px;
+            }
+
+            tbody td:nth-child(2) {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Score</th>
+                <th>Match</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ms dhoni</td>
+                <td>50</td>
+                <td>IPL 2022</td>
+            </tr>
+            <tr>
+                <td>Rohit Sharma</td>
+                <td>40</td>
+                <td>IPL 2023</td>
+            </tr>
+            <tr>
+                <td>Virat Kolhi</td>
+                <td>45</td>
+                <td>IPL 2024</td>
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+</body>
+
+</html>
