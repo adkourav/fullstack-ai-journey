@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <style>
+        
+/* Table Styling */
+
+table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+/* Table Header */
+th {
+    background-color: #e23744;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+/* Table Data */
+td {
+    padding: 12px;
+    text-align: center;
+    border: 2px solid #070606;
+}
+
+/* Alternate Row Color */
+tr:nth-child(even) {
+    background-color: #fff0f0;
+}
+
+/* Hover Effect */
+tr:hover {
+    background-color: #ffd6d9;
+}
+
+/* Table Border */
+table, th, td {
+    border: 1px solid #e23744;
+}
+
+
+    </style>
+    <title>Table-</title>
+</head>
+<body>
+    <h1>Table for HTML</h1>
+    <table>
+    <!-- Head of the table  -->
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>salary</th>
+        </tr>
+    </thead>
+    <!-- body of the table  -->
+     <tbody>
+        <tr>
+            <td>Harry</td>
+            <td>Software developer</td>
+            <td>$7000</td>
+        </tr>
+        <tr>
+            <td>Rohan</td>
+            <td>fontend developer</td>
+            <td>$5000</td>
+        </tr>
+        <tr>
+            <td>Adarsh</td>
+            <td>Ai Engeneer</td>
+            <td>$100000</td>
+        </tr>
+        <tr>
+            <!-- colspan:=  it is basecally use for take a whole no. of colons in a table  ex:- -->
+
+            <td>Thank</td>
+            <td colspan="3">you</td>  <!--it is take a whole three colon in a single line  -->
+        </tr>
+     </tbody>
+    </table>
+</body>
+</html>

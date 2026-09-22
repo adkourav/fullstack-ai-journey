@@ -1,0 +1,593 @@
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    background-color: #e23744;
+
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header {
+    width: 100%;
+
+    height: 80px;
+
+    padding: 0 8%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+
+    transition: all 0.4s ease;
+}
+
+
+/* Header after scrolling */
+
+header.scrolled {
+    position: fixed;
+
+    background-color: rgba(180, 20, 35, 0.95);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================
+   HEADER LOGO
+========================================== */
+
+.logo img {
+    width: 130px;
+
+    display: block;
+
+    transition: 0.3s ease;
+}
+
+
+.logo img:hover {
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+nav ul {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    list-style: none;
+}
+
+
+nav ul li a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    position: relative;
+
+    transition: 0.3s ease;
+}
+
+
+/* Underline animation */
+
+nav ul li a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    width: 0;
+
+    height: 2px;
+
+    background-color: white;
+
+    transition: 0.3s ease;
+}
+
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+main {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(190, 20, 35, 0.75),
+            rgba(150, 10, 25, 0.90)
+        ),
+        url("../img/bg.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   HERO LOGO
+========================================== */
+
+.hero-logo {
+    width: 220px;
+
+    margin-bottom: 30px;
+
+    animation: logoAnimation 1s ease forwards;
+}
+
+
+@keyframes logoAnimation {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-40px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.hero h1 {
+    font-size: 60px;
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+
+    animation: fadeUp 1s ease 0.2s both;
+}
+
+
+/* ==========================================
+   PARAGRAPH
+========================================== */
+
+.hero p {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.92);
+
+    margin-bottom: 30px;
+
+    animation: fadeUp 1s ease 0.4s both;
+}
+
+
+/* ==========================================
+   SEARCH BOX
+========================================== */
+
+.search-box {
+    width: 100%;
+
+    max-width: 650px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    padding: 5px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    animation: searchAnimation 1s ease 0.6s both;
+
+    transition: 0.3s ease;
+}
+
+
+.search-box:focus-within {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.35),
+        0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==========================================
+   LOCATION ICON
+========================================== */
+
+.location-icon {
+    font-size: 20px;
+
+    margin-left: 15px;
+
+    margin-right: 8px;
+}
+
+
+/* ==========================================
+   SEARCH INPUT
+========================================== */
+
+.search-box input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    font-size: 16px;
+
+    padding: 0 10px;
+
+    color: #333;
+}
+
+
+.search-box input::placeholder {
+    color: #888;
+}
+
+
+/* ==========================================
+   SEARCH BUTTON
+========================================== */
+
+.search-box button {
+    height: 50px;
+
+    padding: 0 25px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background-color: #e23744;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.search-box button:hover {
+    background-color: #c82333;
+
+    transform: scale(1.03);
+}
+
+
+/* ==========================================
+   SUGGESTIONS
+========================================== */
+
+.suggestions {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin-top: 10px;
+
+    text-align: left;
+
+    display: none;
+}
+
+
+.suggestions.show {
+    display: block;
+}
+
+
+.suggestion-item {
+    background-color: white;
+
+    color: #333;
+
+    padding: 13px 18px;
+
+    border-bottom: 1px solid #eee;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.suggestion-item:hover {
+    background-color: #fff0f1;
+
+    color: #e23744;
+}
+
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes searchAnimation {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    background-color: #8f1522;
+
+    text-align: center;
+
+    padding: 20px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    header {
+        height: auto;
+
+        padding: 20px 5%;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    nav ul {
+        gap: 16px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+
+    .hero {
+        padding-top: 180px;
+    }
+
+
+    .hero-logo {
+        width: 170px;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 15px;
+    }
+
+
+    .logo img {
+        width: 110px;
+    }
+
+
+    nav ul {
+        gap: 10px;
+    }
+
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+
+    .hero {
+        padding-left: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .hero-logo {
+        width: 140px;
+    }
+
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    .search-box {
+        height: auto;
+
+        padding: 6px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .location-icon {
+        margin-left: 10px;
+    }
+
+
+    .search-box input {
+        height: 48px;
+
+        min-width: 0;
+    }
+
+
+    .search-box button {
+        width: 100%;
+
+        margin-top: 5px;
+    }
+}
+
