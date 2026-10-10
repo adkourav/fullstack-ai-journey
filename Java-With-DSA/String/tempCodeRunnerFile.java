@@ -1,5 +1,4 @@
-.println(str);
-        System.out.println(str2);
-        System.out.println(arr);
-    }
-    
+
+        // if(n==1){
+        //     return 1 ;
+        // }
