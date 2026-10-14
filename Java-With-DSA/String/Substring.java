@@ -4,7 +4,7 @@
 
 // // method one :- inbuild function 
 
-// public class Substring{
+//public class Substring{
     
 //     public static void main (String args[]){
 
@@ -18,4 +18,30 @@
 
 
 
-// method 2 :- user 
+// method 2 :- user create function 
+
+// public class Substring{
+
+//     public static String substring(String str, int si , int ei){
+
+//         String substr = "";
+
+//         // for loop 
+
+//         for (int i = si ; i < ei ; i++){
+
+//             substr += str.charAt(i);
+//         }
+//         return substr;
+//     }
+
+//     // main function 
+
+//     public static void main (String args[]){
+//         String str = "HelloWorld";
+
+//         //call the function 
+
+//         System.out.println(substring(str, 3, 5));
+//     }
+// }
