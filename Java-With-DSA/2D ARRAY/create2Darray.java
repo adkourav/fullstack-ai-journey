@@ -31,5 +31,6 @@ public class create2Darray {
 
             System.out.println();
         }
+        sc.close();
     }
 }
