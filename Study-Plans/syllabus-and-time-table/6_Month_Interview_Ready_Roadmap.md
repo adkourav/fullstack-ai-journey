@@ -148,59 +148,115 @@ AKS / Kubernetes · LangChain internals · Hugging Face · Ollama · Microservic
 
 ### MONTH 2 — JavaScript + React + DSA Acceleration
 
-**JavaScript (P0)**
-- var/let/const, data types, operators, conditions, loops
-- Functions, arrow functions, scope, hoisting, closures, `this`
-- Arrays (map/filter/reduce/find/forEach/sort), objects, JSON
-- Destructuring, spread/rest, modules
-- DOM selection/creation/modification, events, event bubbling & delegation, forms
-- Promises, async/await, try/catch, Fetch API, Axios
-- Event loop (enough to explain in interview)
+**Pace:** Plan for six focused study days and one rest/catch-up day each week, averaging about 4–5 focused hours per study day. Reserve **20 hours total** for the two projects (about 5 hours per week). If a day runs long, move unfinished work to the weekly catch-up day rather than skipping practice or review.
 
-**React (P0 core only)**
-- Vite setup, JSX, functional components
-- Props, state (`useState`), `useEffect`, cleanup
-- Events, conditional rendering, lists & keys
-- Controlled forms + validation
-- Custom hooks (write 2–3)
-- Context API
-- React Router: routes, params, links, protected routes
-- API integration with loading/error states
+#### A. WEEKLY OVERVIEW
 
-**Awareness only:** Redux Toolkit (know what a store/slice is), Material UI, React Testing Library. **Do not build with them.**
+| Week | Main focus | DSA target | Project milestone |
+|------|------------|------------|-------------------|
+| 1 | JavaScript foundations, functions, arrays/objects; React setup and components | 8 sorting problems | Todo app: setup, CRUD, core UI (5 hrs) |
+| 2 | DOM, events, async JavaScript; React state, effects, forms; binary search | 8 binary-search + 3 two-pointer problems | Todo app: filter, localStorage, polish (5 hrs) |
+| 3 | JavaScript interview concepts and APIs; React Context, hooks, routing; recursion | 7 recursion + 3 two-pointer/sliding-window problems | Weather app: setup and API/loading/error flow (5 hrs) |
+| 4 | Backtracking, remaining recursion and sliding window; integrate and revise React | 3 recursion + 8 backtracking problems | Weather app: finish, test manually, README and GitHub (5 hrs) |
 
-**DSA — 40 problems**
-| Topic | Problems |
-|-------|----------|
-| Sorting (bubble/selection/insertion/merge/quick + comparator) | 8 |
-| Binary search + search on answer | 8 |
-| Recursion (array, string, subsets, subsequences) | 10 |
-| Backtracking (permutations, combinations, N-Queens, rat in maze) | 8 |
-| Two pointers + sliding window | 6 |
+#### B. TOPIC-BY-TOPIC BREAKDOWN
 
-**Projects 2 & 3:** Todo App (CRUD + filter + localStorage), Weather App (real API, loading/error states) — 20 hrs
+**Week 1 — prerequisites first**
+- **JavaScript:** `var`/`let`/`const`, data types, operators, conditions, loops; declarations, function and arrow-function syntax; scope, hoisting, closures, and `this`; arrays and array methods (`map`, `filter`, `reduce`, `find`, `forEach`, `sort`); objects, JSON, destructuring, spread/rest, and modules.
+- **React:** create a Vite app; JSX and functional components; props; events; conditional rendering; lists and keys.
+- **DSA:** 8 sorting problems spanning bubble, selection, insertion, merge, and quick sort, including comparator use. State time/space complexity.
+- **Interview practice:** start the 40-question JavaScript bank with language fundamentals and the Month 1 OOP-bank expansion.
+- **Project:** build the Todo app's basic CRUD interface.
 
-#### 🎯 INTERVIEW LAYER — MONTH 2
-| Item | Target |
-|------|--------|
-| **JavaScript question bank** | 40 questions (`var`/`let`/`const`, hoisting, TDZ, scope, closures, `this` in 4 contexts, arrow vs normal function, `call`/`apply`/`bind`, `==` vs `===`, truthy/falsy, shallow vs deep copy, spread vs rest, event bubbling vs capturing, event delegation, debounce vs throttle, synchronous vs asynchronous, callback hell, Promise states, `Promise.all` vs `allSettled` vs `race`, async/await vs `.then`, event loop + microtask vs macrotask, `map` vs `forEach`, `slice` vs `splice`, prototypal inheritance, `localStorage` vs `sessionStorage` vs cookies, CORS) |
-| **React question bank** | 35 questions (what is JSX, virtual DOM & reconciliation, props vs state, controlled vs uncontrolled, why keys, `useState` batching, `useEffect` dependency array & cleanup, `useEffect` vs lifecycle methods, custom hooks, rules of hooks, prop drilling & Context, `useMemo` vs `useCallback`, React Router basics, protected routes, lifting state up, conditional rendering, CSR vs SSR, when to use Redux) |
-| **OOP deep dive** | Expand Month 1 bank to 50 total: four pillars with code, SOLID with examples, composition vs inheritance, design patterns (Singleton, Factory, Observer, Strategy) |
-| **Classic programs** | 20 more: array rotation, two-sum, anagram check, string compression, missing number, majority element, matrix spiral, binary search by hand, merge two sorted arrays, frequency map |
-| **Coding tests** | **2 timed tests** (60–90 min each) |
-| **Aptitude** | 20 min/day — ratio, average, profit/loss, number series |
-| **English** | Daily conversation, technical vocabulary, explain a JS concept aloud daily |
+**Week 2 — browser behavior and state**
+- **JavaScript:** DOM selection, creation, and modification; events, bubbling, capturing, delegation, and forms; synchronous vs asynchronous execution; callbacks and callback hell; Promise states; `try`/`catch`; begin the event loop and microtask/macrotask distinction.
+- **React:** `useState`, `useEffect` and cleanup; controlled forms and validation; component events and state updates.
+- **DSA:** 8 binary-search problems, including search on answer, plus 3 two-pointer problems. Use sorted-array problems to build the two-pointer intuition.
+- **Interview practice:** continue JS questions (including equality, truthiness, copying, and event handling); begin the 35-question React bank.
+- **Project:** finish Todo filtering and localStorage persistence; verify create/read/update/delete and refresh behavior.
 
-**Verbalisation rule (starts now, never stops):** explain every DSA problem out loud in English *before* writing code.
+**Week 3 — async integration and reusable React**
+- **JavaScript:** Promises, `async`/`await`, `.then`, Fetch API and Axios; event loop review; practical browser storage and CORS concepts.
+- **React:** write 2–3 custom hooks; Context API and lifting state; React Router routes, links, and params; begin protected-route behavior.
+- **DSA:** 7 recursion problems involving arrays, strings, subsets, and subsequences; 3 more two-pointer/sliding-window problems.
+- **Interview practice:** cover closures, `this` in its four contexts, `call`/`apply`/`bind`, async patterns, and core React hooks/context questions. Add OOP examples for the four pillars, SOLID, and composition vs inheritance.
+- **Project:** start the Weather app with a real API, and implement loading and error states.
 
-**Month 2 exit check**
-- [ ] 80 DSA problems total
-- [ ] Two React apps on GitHub with READMEs
-- [ ] JS (40) + React (35) question banks answered from memory
-- [ ] OOP bank at 50 questions
-- [ ] 40 classic interview programs written from scratch
-- [ ] 2 timed coding tests completed and reviewed
-- [ ] Can explain closures, promises, event loop, `this` verbally in English
+**Week 4 — application completion and interview readiness**
+- **JavaScript:** consolidate all Month 2 topics; compare `map`/`forEach`, `slice`/`splice`, `Promise.all`/`allSettled`/`race`, and `localStorage`/`sessionStorage`/cookies; review prototypal inheritance, debounce/throttle, and CORS.
+- **React:** finish Router params and protected routes; complete API integration with loading/error states; review rules of hooks and the complete core topic set.
+- **Awareness only:** understand Redux Toolkit's store/slice, Material UI, and React Testing Library at a high level. **Do not build with them.**
+- **DSA:** 3 final recursion problems and 8 backtracking problems covering permutations, combinations, N-Queens, and rat in a maze; finish the 6-problem two-pointer/sliding-window total.
+- **Interview practice:** finish and recall all 40 JavaScript and 35 React questions; bring the Month 1 OOP bank to 50 questions with code/examples for Singleton, Factory, Observer, and Strategy.
+- **Project:** complete the Weather app, add READMEs, and publish both apps to GitHub.
+
+**Month-long interview and problem targets**
+- **JavaScript bank — 40 questions:** cover `var`/`let`/`const`, hoisting, TDZ, scope, closures, `this` in four contexts, arrow vs normal functions, `call`/`apply`/`bind`, `==` vs `===`, truthy/falsy values, shallow vs deep copy, spread vs rest, bubbling vs capturing, event delegation, debounce vs throttle, synchronous vs asynchronous code, callback hell, Promise states, `Promise.all` vs `allSettled` vs `race`, `async`/`await` vs `.then`, event loop and microtask vs macrotask, `map` vs `forEach`, `slice` vs `splice`, prototypal inheritance, browser storage, and CORS. Use the remaining questions to deepen these same areas.
+- **React bank — 35 questions:** cover JSX, virtual DOM and reconciliation, props vs state, controlled vs uncontrolled inputs, keys, `useState` batching, `useEffect` dependencies and cleanup, effects vs lifecycle methods, custom hooks and hook rules, prop drilling and Context, `useMemo` vs `useCallback`, Router basics and protected routes, lifting state, conditional rendering, CSR vs SSR, and when Redux is appropriate. Use remaining questions to deepen these topics.
+- **OOP:** expand the Month 1 bank to 50 questions total; include the four pillars with code, SOLID examples, composition vs inheritance, and Singleton, Factory, Observer, and Strategy patterns.
+- **20 additional classic programs:** complete the 10 named in the syllabus—array rotation, two-sum, anagram check, string compression, missing number, majority element, matrix spiral, binary search by hand, merging two sorted arrays, and a frequency map—plus 10 additional array/string/matrix exercises selected from weak areas. Write all 20 from scratch; with Month 1's 20, the cumulative target is 40.
+- **Timed coding tests:** complete 2 tests of 60–90 minutes and review mistakes and complexity.
+- **Daily habits:** aptitude for 20 minutes (ratio, average, profit/loss, number series); daily English conversation and technical vocabulary; explain one JavaScript concept aloud. Explain **every DSA problem out loud in English before writing code**, and state its complexity.
+
+#### 2. DAILY STUDY PLAN
+
+Use the six study days below each week in order. Day 7 is rest or catch-up; do not use it to routinely add new material. Keep aptitude (20 minutes) and English practice (15 minutes) on each study day. The remaining time is split between the week's topic, DSA, interview/classic-program practice, and the project milestone.
+
+**Week 1**
+| Day | Study plan |
+|-----|------------|
+| 1 | JS declarations, types, operators, conditions, and loops; solve sorting problems 1–2; create the Vite Todo app and first functional component. |
+| 2 | Functions, arrows, scope, and hoisting; solve sorting problems 3–4; practice 2 classic programs; build the Todo layout and props flow. |
+| 3 | Closures and `this`; solve sorting problems 5–6; start JS bank; implement creating and displaying Todo items. |
+| 4 | Arrays and `map`/`filter`/`reduce`/`find`/`forEach`; solve sorting problem 7; practice 2 classic programs; implement update and delete. |
+| 5 | Objects, JSON, destructuring, spread/rest, modules; solve sorting problem 8; practice 2 classic programs; review all five sorting algorithms and complexity. |
+| 6 | React events, conditional rendering, lists/keys; OOP four-pillar review; practice 2 classic programs; use remaining project time to make CRUD usable. |
+| 7 | Rest or catch up; briefly self-test Week 1 concepts without adding new topics. |
+
+**Week 2**
+| Day | Study plan |
+|-----|------------|
+| 1 | DOM selection and modification; binary search problems 1–2; add Todo filtering controls. |
+| 2 | Events, bubbling/capturing, delegation, and forms; binary search problems 3–4; practice 2 classic programs. |
+| 3 | `useState`, `useEffect`, dependencies, and cleanup; binary search problems 5–6; persist Todo data to localStorage. |
+| 4 | Controlled forms and validation; binary search problems 7–8; practice 2 classic programs; test Todo CRUD and persistence. |
+| 5 | Sync/async execution, callbacks, Promise states, `try`/`catch`; two-pointer problems 1–2; JS and React question-bank recall. |
+| 6 | Event loop, microtasks/macrotasks, and two-pointer problem 3; review Month 1 OOP questions; finish Todo README and publish it. |
+| 7 | Rest or catch up; revisit incorrect binary-search approaches and Todo bugs. |
+
+**Week 3**
+| Day | Study plan |
+|-----|------------|
+| 1 | Recursion problems 1–2 (arrays/strings); Fetch and Promise flow; custom hook 1; start Weather app and inspect the API response. |
+| 2 | Recursion problems 3–4 (arrays/strings); `async`/`await` vs `.then`; custom hook 2; implement Weather loading state. |
+| 3 | Recursion problems 5–6 (subsets); Axios and error handling; Context and lifting state; implement Weather error state. |
+| 4 | Recursion problem 7 (subsequences); Router routes, links, and params; two-pointer/sliding-window problems 1–2; practice 2 classic programs. |
+| 5 | Two-pointer/sliding-window problem 3; protected-route concept; review event loop, browser storage, and CORS; add Weather results UI. |
+| 6 | OOP SOLID and composition vs inheritance; practice 2 classic programs; verify Weather API success/loading/error paths and write project notes. |
+| 7 | Rest or catch up; consolidate recursion patterns and finish any project milestone work. |
+
+**Week 4**
+| Day | Study plan |
+|-----|------------|
+| 1 | Backtracking problems 1–2 (permutations/combinations); recursion problem 8; review React hooks and Context; finish Weather API integration. |
+| 2 | Backtracking problems 3–4; recursion problem 9; Router params/protected routes; practice 2 classic programs. |
+| 3 | Backtracking problems 5–6 (N-Queens/rat in a maze); recursion problem 10; review JS bank from memory. |
+| 4 | Backtracking problems 7–8; review all 6 two-pointer/sliding-window problems; complete the React question bank and project README. |
+| 5 | Timed coding test 1 (60–90 min) and review; practice 2 classic programs; finish and publish Weather app. |
+| 6 | Timed coding test 2 (60–90 min) and review; OOP bank to 50; awareness-only Redux Toolkit/MUI/RTL; final verbal review of closures, Promises, event loop, and `this`. |
+| 7 | Rest or catch up; check the exit checklist and schedule any missed target before considering Month 2 complete. |
+
+#### 3. FINAL MONTH 2 SUMMARY
+
+- [ ] 40 new DSA problems completed: 8 sorting, 8 binary search/search on answer, 10 recursion, 8 backtracking, and 6 two-pointer/sliding-window. Together with Month 1: **80 total**.
+- [ ] Todo and Weather React apps completed, with READMEs, on GitHub.
+- [ ] JavaScript (40) and React (35) question banks answered from memory.
+- [ ] Month 1 OOP bank expanded to 50 questions.
+- [ ] 20 additional classic programs written from scratch; **40 total** with Month 1.
+- [ ] 2 timed coding tests completed and reviewed.
+- [ ] 20 project hours completed across both apps.
+- [ ] Can explain closures, Promises, the event loop, and `this` verbally in English.
+- [ ] Every DSA solution was explained aloud before coding, with complexity stated.
 
 ---
 
